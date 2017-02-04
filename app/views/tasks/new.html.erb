@@ -1,0 +1,12 @@
+<!-- app/views/sessions/new.html.erb -->
+
+<h1>Create a new Task</h1>
+
+<%= form_tag '/mytasks/new' do %>
+
+    Task to be done: <%= text_field_tag :description %>
+    <%= submit_tag "Submit" %>
+
+  <% end %>
+
+

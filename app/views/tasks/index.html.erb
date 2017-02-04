@@ -1,0 +1,22 @@
+<h1>Tasks</h1>
+</br></br>
+<h2>Current Tasks</h2>
+<%= link_to "Create new Task", '/mytasks/new' %></br>
+<table border="1" cellpadding="5" cellspacing="5"> 
+  <tr>
+    <th>Task Description</th>
+    <th>State</th>
+  </tr>
+  <% @tasks.each do |task| %>
+    <tr>
+      <td><%= task.description %></td>
+      <td>
+        <% if task.state  %>
+          Done - <%= link_to "Delete?", mydestroytask_path(task), :method => :post %>
+        <% else %>
+          Not Done - <%= link_to "Set as Done?", mytask_path(task) %> 
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
